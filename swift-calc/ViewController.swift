@@ -38,16 +38,11 @@ class ViewController: UIViewController {
         }
         
         if let mathematicalSymbol = sender.currentTitle {
-            if mathematicalSymbol == "π" {
-//                displayValue = M_PI
-                brain.performOperation(symbol: mathematicalSymbol)
-            } else if mathematicalSymbol == "√" {
-//                displayValue = sqrt(displayValue)
-                brain.performOperation(symbol: mathematicalSymbol)
-            }
-            displayValue = brain.result
+            brain.performOperation(symbol: mathematicalSymbol)
         }
+        displayValue = brain.result
     }
+    
     @IBAction private func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTyping {
